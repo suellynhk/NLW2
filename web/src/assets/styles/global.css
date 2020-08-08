@@ -43,6 +43,7 @@ body {
 
 body, button, input, textarea {
     font: 500 1.6rem Poppins;
+    color: var(--color-text-base);
 }
 /* o padrão + ou - do tamanho da fonte das aplicações é 16px, font-size foi 
 configurada em 60% do tamanho padrão, pensando em mobile , o que significa 

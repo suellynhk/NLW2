@@ -7,7 +7,9 @@ import './styles.css';
 
 interface PageHeaderProps {
     title: string;
+    description?: string; 
 }
+//title e description são usadas no index.tsx do TeacherForm; ?: torna opcional- pq em algumas paginas utilizam e outras n
 
 const PageHeader: React.FC<PageHeaderProps> = (props) => { //o PageHeader é do tipo: React.FC (function component)
     return (
@@ -19,15 +21,22 @@ const PageHeader: React.FC<PageHeaderProps> = (props) => { //o PageHeader é do 
                 <img src={logoImg} alt="Proffy"/>
             </div>
 
-            <div className="header-content">
+            <div className="header-content"> 
                 <strong>{props.title}</strong>
-
+                { props.description && <p>{props.description}</p> } 
+                
                 {props.children}
             </div>
         </header>
     )
 }
-
+/*
+o operador lógico and (&&) só executa a segunda parte se a primeira for verdadeira.
+é uma forma de fazer uma condicional dentro do jsx
+Outra forma de fazer isso: 
+{ props.description ? <p>{props.description}</p> : null } 
+se tiver alguma informação de props.description mostra, se não(:) nulo.
+*/
 export default PageHeader;
 
 
